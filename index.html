@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Sadhukhan | CSE Student, Tech Entrepreneur & Web Developer</title>
+  <meta name="description" content="Portfolio of Shreya Sadhukhan — Computer Science student, tech entrepreneur, founder of AIVEXA Web Solutions, and AI & Web3 enthusiast." />
+  <meta name="author" content="Shreya Sadhukhan" />
+
+  <!-- Google Fonts: Syne (Display) and Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Vanilla CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor Elements (Dot + Smooth Lagging Ring) -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- ========================================================================
+       1. STICKY HEADER & NAVBAR
+       ======================================================================== -->
+  <header id="header" class="header">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="#hero" class="nav-brand" aria-label="Shreya Sadhukhan Portfolio Homepage">
+        Shreya<span class="nav-brand-dot">.</span>dev
+        <span class="nav-brand-badge">CSE & Entrepreneur</span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav id="nav-menu" class="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#timeline" class="nav-link">Journey</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Action Utilities: Theme Switcher & Mobile Hamburger -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Switch to light mode">
+          <!-- Moon Icon (Dark Mode Active) -->
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon (Light Mode Active) -->
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Hamburger Toggle Button for Mobile -->
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Copy & CTAs -->
+          <div class="hero-content reveal">
+            <!-- Status & Location Badges -->
+            <div class="hero-badge-container">
+              <span class="hero-status-pill">
+                <span class="status-dot-pulse"></span>
+                Open for Innovative Projects & Collaborations
+              </span>
+              <span class="hero-location-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Kolkata, WB, India
+              </span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+              Hi, I’m <span class="hero-name-highlight">Shreya Sadhukhan</span>
+            </h1>
+
+            <!-- Animated Typing Element -->
+            <div class="hero-typing-wrapper">
+              <span>I am a&nbsp;</span>
+              <span id="typed-text" class="hero-typed-text"></span>
+              <span class="hero-cursor-blink" aria-hidden="true"></span>
+            </div>
+
+            <!-- Pitch Description -->
+            <p class="hero-description">
+              Building Ideas. Creating Impact. Shaping the Future with Technology. Passionate about engineering real-world digital products, exploring AI breakthroughs, and building scalable ventures.
+            </p>
+
+            <!-- Magnetic CTA Buttons -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary magnetic-btn" id="hero-view-projects-btn">
+                <span>Explore Projects</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary magnetic-btn" id="hero-contact-btn">
+                <span>Get In Touch</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Key Stats Counter Grid -->
+            <div class="hero-stats-grid">
+              <div class="stat-item">
+                <div class="stat-number-wrapper">
+                  <span class="counter-number" data-target="6">0</span><span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-label">Projects Built</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number-wrapper">
+                  <span class="counter-number" data-target="4">0</span><span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-label">Awards & Ventures</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number-wrapper">
+                  <span class="counter-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                </div>
+                <span class="stat-label">Tech Stacks</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number-wrapper">
+                  <span class="counter-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                </div>
+                <span class="stat-label">Impact Driven</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Showcase Card -->
+          <div class="hero-visual-card reveal delay-1">
+            <div class="hero-avatar-wrapper">
+              <div class="hero-avatar-box">
+                <span class="hero-avatar-initials">SS</span>
+              </div>
+            </div>
+            <div class="hero-card-meta">
+              <h2 class="hero-card-name">Shreya Sadhukhan</h2>
+              <p class="hero-card-role">CSE @ FIEM &bull; Founder @ AIVEXA</p>
+            </div>
+            <div class="hero-tech-pills">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">React & Next.js</span>
+              <span class="tech-chip">GenAI</span>
+              <span class="tech-chip">Web3</span>
+              <span class="tech-chip">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ABOUT & PHILOSOPHY SECTION
+         ====================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Driven by Curiosity, Defined by Building</h2>
+          <p class="section-subtitle">A glimpse into my background, product mindset, and technical journey.</p>
+        </header>
+
+        <div class="about-grid">
+          <!-- Bio & Personal Brand Statement -->
+          <div class="about-text-content reveal">
+            <p>
+              I’m a <strong>B.Tech Computer Science & Engineering</strong> student at <em>Future Institute of Engineering and Management (FIEM)</em>, MAKAUT (2026–2030). My passion lies at the intersection of technology, entrepreneurship, artificial intelligence, web development, and practical product engineering.
+            </p>
+            <p>
+              I thrive on turning complex problems into intuitive digital solutions. Whether designing AI-powered platforms, organizing student tech initiatives, or building <strong>AIVEXA WEB SOLUTIONS</strong>, I focus on creating technology that delivers tangible real-world value.
+            </p>
+
+            <!-- Personal Brand Statement Card -->
+            <div class="brand-quote-card">
+              <p class="brand-quote-text">
+                "I’m a builder at heart — I learn technology by creating with it, turn ideas into products, and believe that the best way to grow is to build, experiment, and create meaningful impact."
+              </p>
+              <span class="brand-quote-author">— Shreya Sadhukhan</span>
+            </div>
+
+            <!-- Current Focus Tags -->
+            <div class="about-focus-areas">
+              <h3 class="focus-title">Current Focus & Interests</h3>
+              <div class="focus-tags">
+                <span class="focus-tag">🚀 Artificial Intelligence & GenAI</span>
+                <span class="focus-tag">💻 Full-Stack Development</span>
+                <span class="focus-tag">📊 Data Analytics</span>
+                <span class="focus-tag">🔗 Web3 & Blockchain</span>
+                <span class="focus-tag">💡 Tech Entrepreneurship</span>
+                <span class="focus-tag">🎯 Product Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Card with Animated Progress Bars -->
+          <div id="skills" class="skills-card reveal delay-1">
+            <div class="skills-card-title">
+              <span>Technical Proficiencies</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+
+            <div class="skill-list">
+              <!-- Skill Item 1 -->
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Python & Data Foundations</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-fill="90%"></div>
+                </div>
+              </div>
+
+              <!-- Skill Item 2 -->
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>JavaScript (ES6+) & Modern Web</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-fill="92%"></div>
+                </div>
+              </div>
+
+              <!-- Skill Item 3 -->
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>React, Next.js & Framer Motion</span>
+                  <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-fill="88%"></div>
+                </div>
+              </div>
+
+              <!-- Skill Item 4 -->
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Node.js, Express & REST APIs</span>
+                  <span class="skill-percent">84%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-fill="84%"></div>
+                </div>
+              </div>
+
+              <!-- Skill Item 5 -->
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>PostgreSQL & Prisma ORM</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-fill="80%"></div>
+                </div>
+              </div>
+
+              <!-- Skill Item 6 -->
+              <div class="skill-item">
+                <div class="skill-meta">
+                  <span>Git, GitHub & Cloud Deployment (Vercel)</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" data-fill="92%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. FEATURED PROJECTS SECTION
+         ====================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Crafted with Code, Driven by Purpose</h2>
+          <p class="section-subtitle">Explore a selection of web applications, AI tools, and decentralized solutions.</p>
+        </header>
+
+        <!-- Project Filter Buttons (All / Web / Design / Other) -->
+        <div class="projects-filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="web">Web Apps</button>
+          <button class="filter-btn" data-filter="design">Design & UI</button>
+          <button class="filter-btn" data-filter="other">AI & Web3</button>
+        </div>
+
+        <!-- Responsive Grid of 6 Project Cards -->
+        <div class="projects-grid">
+          
+          <!-- Card 1: CitiFix (Web / Other) -->
+          <article class="project-card spotlight-card reveal" data-category="web other" id="project-citifix">
+            <div class="project-banner">
+              <span class="project-badge-tag">Civic Tech & Web3</span>
+              <div class="project-geometric-shape" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">CitiFix Platform</h3>
+              <p class="project-description">
+                A crowdsourced civic issue reporting and resolution portal featuring immutable blockchain-based record keeping, geolocation tagging, and automated authority escalation.
+              </p>
+              <div class="project-tech-stack">
+                <span class="project-tech-badge">Next.js</span>
+                <span class="project-tech-badge">PostgreSQL</span>
+                <span class="project-tech-badge">Blockchain</span>
+                <span class="project-tech-badge">Prisma</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Code</span>
+                </a>
+                <a href="#contact" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: ZK-Identity Shield (Other) -->
+          <article class="project-card spotlight-card reveal delay-1" data-category="other" id="project-zk-id">
+            <div class="project-banner">
+              <span class="project-badge-tag">Zero-Knowledge Proofs</span>
+              <div class="project-geometric-shape" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ZK-Identity Shield</h3>
+              <p class="project-description">
+                A decentralized identity verification system using Zero-Knowledge Proofs (ZKPs) to enable private age, citizenship, and credential authentication without exposing raw credentials.
+              </p>
+              <div class="project-tech-stack">
+                <span class="project-tech-badge">Python</span>
+                <span class="project-tech-badge">ZK-SNARKs</span>
+                <span class="project-tech-badge">Web3</span>
+                <span class="project-tech-badge">Cryptography</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Code</span>
+                </a>
+                <a href="#contact" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: AIVEXA Solutions (Web) -->
+          <article class="project-card spotlight-card reveal delay-2" data-category="web" id="project-aivexa">
+            <div class="project-banner">
+              <span class="project-badge-tag">Agency Portal</span>
+              <div class="project-geometric-shape" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AIVEXA Web Suite</h3>
+              <p class="project-description">
+                Interactive web presence and client portal for AIVEXA Web Solutions, empowering modern businesses with AI-powered marketing pipelines and lightning-fast web architectures.
+              </p>
+              <div class="project-tech-stack">
+                <span class="project-tech-badge">React</span>
+                <span class="project-tech-badge">Node.js</span>
+                <span class="project-tech-badge">Express.js</span>
+                <span class="project-tech-badge">Vercel</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Code</span>
+                </a>
+                <a href="#contact" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Live Site</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: AI Study Copilot (Web / Other) -->
+          <article class="project-card spotlight-card reveal" data-category="web other" id="project-copilot">
+            <div class="project-banner">
+              <span class="project-badge-tag">Generative AI</span>
+              <div class="project-geometric-shape" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AI Academic Copilot</h3>
+              <p class="project-description">
+                An intelligent study companion that parses lecture slides, synthesizes concept flashcards, and generates interactive quizzes with grounded vector explanations.
+              </p>
+              <div class="project-tech-stack">
+                <span class="project-tech-badge">Python</span>
+                <span class="project-tech-badge">Generative AI</span>
+                <span class="project-tech-badge">FastAPI</span>
+                <span class="project-tech-badge">React</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Code</span>
+                </a>
+                <a href="#contact" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Aura Design System (Design) -->
+          <article class="project-card spotlight-card reveal delay-1" data-category="design" id="project-aura">
+            <div class="project-banner">
+              <span class="project-badge-tag">UI/UX Design</span>
+              <div class="project-geometric-shape" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Aura Design System</h3>
+              <p class="project-description">
+                A modern UI kit and CSS token library engineered for high-contrast accessibility, smooth micro-interactions, dark/light theme switching, and seamless component reusability.
+              </p>
+              <div class="project-tech-stack">
+                <span class="project-tech-badge">CSS3 Custom Props</span>
+                <span class="project-tech-badge">Figma</span>
+                <span class="project-tech-badge">Accessibility</span>
+                <span class="project-tech-badge">Vanilla JS</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Tokens</span>
+                </a>
+                <a href="#contact" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Preview</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: FinPulse Analytics (Web / Design) -->
+          <article class="project-card spotlight-card reveal delay-2" data-category="web design" id="project-finpulse">
+            <div class="project-banner">
+              <span class="project-badge-tag">Financial Tech</span>
+              <div class="project-geometric-shape" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">FinPulse Analytics</h3>
+              <p class="project-description">
+                Real-time financial analytics dashboard displaying currency dynamics, portfolio metrics, interactive candlestick charts, and market volatility sentiment scores.
+              </p>
+              <div class="project-tech-stack">
+                <span class="project-tech-badge">JavaScript</span>
+                <span class="project-tech-badge">REST APIs</span>
+                <span class="project-tech-badge">CSS Grid</span>
+                <span class="project-tech-badge">HTML5 Canvas</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Code</span>
+                </a>
+                <a href="#contact" class="project-link-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. EDUCATION & ACHIEVEMENTS TIMELINE
+         ====================================================================== -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-tag">Education & Milestones</span>
+          <h2 class="section-title">My Academic & Venture Journey</h2>
+          <p class="section-subtitle">Key chapters of engineering education, hackathons, and product leadership.</p>
+        </header>
+
+        <!-- Vertical Timeline with Alternating Cards -->
+        <div class="timeline-container">
+          
+          <!-- Timeline Node 1: B.Tech Degree -->
+          <div class="timeline-item reveal">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-date">2026 – 2030</span>
+              <h3 class="timeline-title">B.Tech in Computer Science & Engineering</h3>
+              <p class="timeline-subtitle">Future Institute of Engineering and Management (FIEM), Sonarpur &bull; MAKAUT</p>
+              <p class="timeline-desc">
+                Enrolled in 1st Year CSE. Focusing on core Data Structures, Algorithms, Computer Architecture, Discrete Mathematics, and Full-Stack Web Development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Node 2: Hackspire 2026 Award -->
+          <div class="timeline-item reveal delay-1">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-date">2026</span>
+              <h3 class="timeline-title">🏆 Best Fresher’s Team Award — Hackspire 2026</h3>
+              <p class="timeline-subtitle">Inter-College Hackathon Achievement</p>
+              <p class="timeline-desc">
+                Led a high-velocity student engineering squad to build and pitch a full-stack digital solution under 36 hours, securing the prestigious top newcomer recognition.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Node 3: AIVEXA Web Solutions -->
+          <div class="timeline-item reveal delay-2">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-date">2026 – Present</span>
+              <h3 class="timeline-title">Founder & Tech Lead</h3>
+              <p class="timeline-subtitle">AIVEXA WEB SOLUTIONS</p>
+              <p class="timeline-desc">
+                Founded a student-led AI-powered marketing and modern web solutions agency. Designing scalable web experiences, custom automation bots, and brand digital identities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Node 4: Civic & Web3 Innovations -->
+          <div class="timeline-item reveal delay-3">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <span class="timeline-date">2025 – 2026</span>
+              <h3 class="timeline-title">Prototyping CitiFix & ZK-Proofs</h3>
+              <p class="timeline-subtitle">Decentralized Software Exploration</p>
+              <p class="timeline-desc">
+                Engineered decentralized record-keeping architectures, smart contracts for civic tracking, and cryptographic proofs for privacy-preserving authentication.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CONTACT SECTION & VALIDATED FORM
+         ====================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-tag">Let’s Connect</span>
+          <h2 class="section-title">Ready to Build the Future Together?</h2>
+          <p class="section-subtitle">Have an exciting idea, internship opportunity, or hackathon collaboration? Reach out anytime!</p>
+        </header>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Cards & Socials -->
+          <div class="contact-info-wrapper reveal">
+            <div class="contact-info-list">
+              
+              <!-- Email Card -->
+              <div class="contact-info-card">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <div class="contact-meta-label">Email Address</div>
+                  <a href="mailto:shreyasadhukhan098@gmail.com" class="contact-meta-value">shreyasadhukhan098@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="contact-info-card">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-meta-label">Direct Phone</div>
+                  <a href="tel:+919674232851" class="contact-meta-value">+91 96742 32851</a>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="contact-info-card">
+                <div class="contact-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <div class="contact-meta-label">Location</div>
+                  <div class="contact-meta-value">Kolkata, West Bengal, India</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="social-links-wrapper">
+              <h3 class="social-links-title">Connect on Networks</h3>
+              <div class="social-icons-row">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/shreya-sadhukhan-b43542431" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/shreyasadhukhan-spec" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram Profile">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form with Client-Side Validation -->
+          <div class="contact-form-card reveal delay-1">
+            <div id="form-alert" class="form-status-alert" role="status" aria-live="polite"></div>
+
+            <form id="contact-form" novalidate>
+              <!-- Full Name Field -->
+              <div class="form-group">
+                <input type="text" id="name" name="name" class="form-control" placeholder=" " required />
+                <label for="name" class="form-label">Full Name</label>
+                <div class="form-error-msg">Please enter your full name (minimum 2 characters).</div>
+              </div>
+
+              <!-- Email Address Field -->
+              <div class="form-group">
+                <input type="email" id="email" name="email" class="form-control" placeholder=" " required />
+                <label for="email" class="form-label">Email Address</label>
+                <div class="form-error-msg">Please enter a valid email address (e.g. name@domain.com).</div>
+              </div>
+
+              <!-- Subject Field -->
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" class="form-control" placeholder=" " required />
+                <label for="subject" class="form-label">Subject</label>
+                <div class="form-error-msg">Please enter the subject of your message.</div>
+              </div>
+
+              <!-- Message Field -->
+              <div class="form-group">
+                <textarea id="message" name="message" class="form-control" placeholder=" " required></textarea>
+                <label for="message" class="form-label">Your Message</label>
+                <div class="form-error-msg">Please provide a detailed message (minimum 10 characters).</div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary magnetic-btn" id="contact-submit-btn" style="width: 100%;">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. FOOTER & BACK TO TOP BUTTON
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#hero" class="nav-brand">
+            Shreya<span class="nav-brand-dot">.</span>dev
+          </a>
+          <p class="footer-brand-tagline">
+            Building Ideas. Creating Impact. Shaping the Future with Technology.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#timeline" class="footer-link">Journey</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shreya Sadhukhan. Crafted with pure vanilla HTML, CSS & JavaScript.</p>
+        <p>Future Institute of Engineering and Management (FIEM) &bull; MAKAUT</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back-to-Top Action Button -->
+  <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Scroll back to top of page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Main Vanilla JavaScript File -->
+  <script src="script.js" defer></script>
+</body>
+</html>
