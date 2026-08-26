@@ -1961,17 +1961,24 @@ textarea.form-control {
 
   /* --------------------------------------------------------------------------
      PRINT LINK URL ANNOTATIONS
-     WHAT: Displays full target destination URLs next to links when printed.
-     WHY: Allows offline readers of physical printouts and PDFs to see where
-          projects, repositories, social profiles, and contact links lead.
+     WHAT: Displays full target destination URLs next to all links when printed.
+     WHY: Ensures every hyperlink's full URL is visible when the portfolio is
+          printed or exported as a document.
      -------------------------------------------------------------------------- */
+  a::after,
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #000000;
+    word-break: break-all;
+  }
 
-  /* Show project action link URLs clearly */
+  /* Specific link layouts in print */
   .project-actions {
     display: flex !important;
     flex-direction: column !important;
     gap: 0.35rem !important;
-    border-top: 1pt solid #e5e7eb !important;
+    border-top: 1pt solid #000000 !important;
     padding-top: 0.75rem !important;
   }
 
@@ -1981,16 +1988,8 @@ textarea.form-control {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
-    color: #0284c7 !important;
+    color: #000000 !important;
     font-size: 0.85rem !important;
-  }
-
-  .project-link-btn[href^="http"]::after {
-    content: ": " attr(href);
-    font-size: 0.8em;
-    color: #4b5563;
-    word-break: break-all;
-    margin-left: 0.25rem;
   }
 
   /* Social Profiles in Print */
@@ -2014,36 +2013,9 @@ textarea.form-control {
     border-radius: 0 !important;
     border: none !important;
     background: transparent !important;
-    color: #111827 !important;
+    color: #000000 !important;
     font-size: 0.85rem !important;
     gap: 0.5rem !important;
-  }
-
-  .social-btn::after {
-    content: attr(href);
-    color: #0284c7;
-    font-size: 0.85em;
-    word-break: break-all;
-  }
-
-  /* General external and contact protocol links (http, mailto, tel) */
-  a[href^="http"]:not(.project-link-btn):not(.social-btn)::after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-    color: #4b5563;
-    word-break: break-all;
-  }
-
-  a[href^="mailto:"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-    color: #4b5563;
-  }
-
-  a[href^="tel:"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-    color: #4b5563;
   }
 
   /* Contact and layout adjustments for clean print columns */
